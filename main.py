@@ -26,7 +26,7 @@ def getData(username: str) -> list[dict]:
 
     except Exception as f:
         print(f"REQUEST FAILED: {f}")
-        return []
+    return []
 
 
 username = input("\nENTER THE USERNAME TO FETCH DATA : ")
@@ -149,4 +149,5 @@ MOST POPULAR REPOSITORY     : {sorted(df["STARS PER REPO"].items(), key=lambda x
     plt.tight_layout()
     plt.show()
 else:
+
     print("NO DATA RECIEVED!")
