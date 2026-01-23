@@ -4,29 +4,40 @@ from datetime import datetime, timezone
 
 def getData(username: str) -> list[dict]:
     """FETCHING API DATA USING GET()"""
-    url = f"https://api.github.com/users/{username}/repos"
+    repos = []
+    page = 1
+    per_page = 100
 
-    try:
-        response = requests.get(url, timeout=10)
+    while True:
+        url = f"https://api.github.com/users/{username}/repos"
+        params = {"per_page": per_page, "page": page}
 
-        if response.status_code == 200:
-            return response.json()
-        
-        elif response.status_code == 404:
-            print("USER NOT FOUND!")
+        try:
+            response = requests.get(url, params=params, timeout=10)
 
-        elif response.status_code == 403:
-            print("RATE LIMIT EXCEEDED!")
+            if response.status_code == 200:
+                repo = response.json()
 
-        else:
-            print(f"ERROR: {response.status_code}")
+                if not repo: break
+                repos.extend(repo)
+                page += 1
+            
+            elif response.status_code == 404:
+                print("USER NOT FOUND!"); break
 
-    except requests.exceptions.Timeout:
-        print("REQUEST TIMED OUT")
+            elif response.status_code == 403:
+                print("RATE LIMIT EXCEEDED!"); break
 
-    except Exception as f:
-        print(f"REQUEST FAILED: {f}")
-    return []
+            else:
+                print(f"ERROR: {response.status_code}"); break
+
+        except requests.exceptions.Timeout:
+            print("REQUEST TIMED OUT"); break
+
+        except Exception as f:
+            print(f"REQUEST FAILED: {f}"); break
+
+    return repos
 
 
 username = input("\nENTER THE USERNAME TO FETCH DATA : ")
@@ -38,12 +49,10 @@ def is_repo_active(pushed_at: str) -> bool:
     if not pushed_at: return False
 
     pushed_date = datetime.strptime(
-        pushed_at, "%Y-%m-%dT%H:%M:%SZ"
-        ).replace(tzinfo=timezone.utc)
+        pushed_at, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
 
     today = datetime.now(timezone.utc)
     days_since_push = (today - pushed_date).days
-
     return days_since_push <= STALE_DAYS
 
 
@@ -148,6 +157,6 @@ MOST POPULAR REPOSITORY     : {sorted(df["STARS PER REPO"].items(), key=lambda x
 
     plt.tight_layout()
     plt.show()
+    
 else:
-
     print("NO DATA RECIEVED!")
