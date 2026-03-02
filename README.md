@@ -1,4 +1,4 @@
-# GitHub Repository Analyzer - Python
+# GitHub Repo Analyzer - Python
 
 ## Dashboard View
 - Github Repo Analysis os CODE WITH HARRY'S Github Account
@@ -15,7 +15,6 @@ This project demonstrates real-world usage of:
 - Data Aggregation
 - Graphical Visualization
 
----
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -32,14 +31,12 @@ This project demonstrates real-world usage of:
 
 ### GitHub API Data Fetching
 - Fetches repository data using GitHub REST API
-- API URL : f"https://api.github.com/users/{username}/repos"
+- API URL : `https://api.github.com/users/<username>/repos`
 - Handles:
   - Invalid usernames
   - API rate limits
   - Request timeouts
 - Uses structured exception handling
-
----
 
 ### Repository Statistics Analysis
 Calculates:
@@ -48,27 +45,23 @@ Calculates:
 - Active and stale repositories
 - Total stars, forks, watchers, and open issues
 
----
 
 ### Activity Status Detection
 - Determines repository activity based on last pushed date
 - Uses a fixed inactivity threshold to classify stale repositories
 
----
 
 ### Language Usage Analysis
 - Extracts programming languages used across repositories
 - Identifies the majority language
 - Handles missing or null language values
 
----
 
 ### Popularity Insights
 - Identifies the most starred repository
 - Calculates stars per repository
 - Highlights top repositories based on popularity
 
----
 
 ### Graphical Visualization
 Provides professional visualizations using Matplotlib:
@@ -77,7 +70,6 @@ Provides professional visualizations using Matplotlib:
 - Language distribution (donut chart)
 - Stars per repository (top repositories)
 
----
 
 ## Technical Stack Used
 | Component | Technology |
@@ -88,7 +80,6 @@ Provides professional visualizations using Matplotlib:
 | Visualization | `matplotlib` |
 | Data Source | GitHub REST API |
 
----
 
 ## How to Run the Project?
 
@@ -116,21 +107,16 @@ python main.py
 - A detailed GitHub profile analysis report
 - Multiple graphical visualizations
 
-----
 
 ## Future Scopes
-- GitHub authentication using personal access tokens
 - Export reports as PDF or CSV
 - Support for organization accounts
-- Interactive dashboard using Streamlit or Dash
 - User-to-user GitHub profile comparison
 
----
 
 ## Author
 Designed and created by `Tanishk Bhatt` a Student and a Programmer of India, as a real world working project using API Handling and Visualisation.
 
----
 
 ## Links
 - Requests Library Documentation :
