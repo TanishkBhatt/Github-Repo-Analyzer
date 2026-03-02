@@ -2,12 +2,12 @@ import requests
 import matplotlib.pyplot as plt
 from datetime import datetime, timezone
 
-def getData(username: str) -> list[dict]:
-    """FETCHING API DATA USING GET()"""
+from config import TOKEN
+
+def get_data(username: str) -> list[dict]:
     repos = []
     page = 1
     per_page = 100
-    TOKEN = "put_your_token_here"
 
     while True:
         url = f"https://api.github.com/users/{username}/repos"
@@ -48,10 +48,9 @@ def getData(username: str) -> list[dict]:
 
 
 username = input("\nENTER THE USERNAME TO FETCH DATA : ")
-data = getData(username)
+data = get_data(username)
 
 def is_repo_active(pushed_at: str) -> bool:
-    """ACTIVITY STATUS CALCULATOR"""
     STALE_DAYS = 90
     if not pushed_at: return False
 

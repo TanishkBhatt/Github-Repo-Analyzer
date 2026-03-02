@@ -1,5 +1,10 @@
 # GitHub Repository Analyzer - Python
 
+## Dashboard View
+- Github Repo Analysis os CODE WITH HARRY'S Github Account
+
+![](dashboard.png)
+
 ## Introduction
 `GitHub Repository Analyzer` is a Python-based analytics tool that fetches real-time repository data from the GitHub REST API and converts it into meaningful insights.  
 The project focuses on `API integration`, `Data Processing`, and `Visual Analytics` to evaluate a GitHub user’s repository activity, popularity, and technology usage.
@@ -27,6 +32,7 @@ This project demonstrates real-world usage of:
 
 ### GitHub API Data Fetching
 - Fetches repository data using GitHub REST API
+- API URL : f"https://api.github.com/users/{username}/repos"
 - Handles:
   - Invalid usernames
   - API rate limits
@@ -95,6 +101,11 @@ git clone https://github.com/TanishkBhatt/Github-Repo-Analyzer.git
 ```bash
 pip install requests matplotlib
 ```
+### Add Your Github Developer TOKEN
+- Open `config.py`
+```python
+TOKEN = "your_token_here"
+```
 
 ### Run the Script
 ```bash
@@ -122,19 +133,14 @@ Designed and created by `Tanishk Bhatt` a Student and a Programmer of India, as 
 ---
 
 ## Links
-- GitHub REST API URL :
-https://api.github.com/users/Username/repos
+- Requests Library Documentation :
+https://docs.python-requests.org/
 
 - Matplotlib Documentation :
 https://matplotlib.org/stable/index.html
 
-- Requests Library Documentation :
-https://docs.python-requests.org/
-
 - Protfolio : https://tanishkbhatt.github.io/Portfolio/
-
 - Github : https://github.com/TanishkBhatt/
-
 - YouTube : https://youtube.com/@TanishkBhatt-x6w/
 
 ----
