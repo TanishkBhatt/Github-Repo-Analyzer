@@ -41,7 +41,7 @@ if mode == "WITH TOKENIZATION":
                     st.markdown("##### BASIC DETAILS")
                     st.dataframe(basic_details)
                 with col2:
-                    st.markdown("##### REPO POPULARIRY")
+                    st.markdown("##### REPO POPULARITY")
                     st.dataframe(stars_per_repo)
                 with col3:
                     st.markdown("##### MAJORITY LANGUAGE")
@@ -84,7 +84,7 @@ if mode == "WITHOUT TOKENIZATION":
                     st.markdown("##### BASIC DETAILS")
                     st.dataframe(basic_details)
                 with col2:
-                    st.markdown("##### REPO POPULARIRY")
+                    st.markdown("##### REPO POPULARITY")
                     st.dataframe(stars_per_repo)
                 with col3:
                     st.markdown("##### MAJORITY LANGUAGE")
