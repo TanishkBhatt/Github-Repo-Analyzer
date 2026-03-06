@@ -15,7 +15,7 @@ st.markdown("")
 
 if mode == "WITH TOKENIZATION":
     with st.form(key='github_repo_analyzer_tokenized'):
-        TOKEN: str = st.text_input("PUT YOUR GITHUB DEV TOKEN HERE", type='password')
+        TOKEN: str = st.text_input("PUT YOUR GITHUB DEV TOKEN HERE")
         username: str = st.text_input("ENTER THE USERNAME YOU WANT TO FETCH DATA OF")
         valid: bool = username.strip() and TOKEN.strip()
 
