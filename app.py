@@ -27,8 +27,8 @@ if mode == "WITH TOKENIZATION":
         if not valid:
             st.warning("First Carefully Enter the Required Details")
         else:
-            data: list[dict] = fetch_data_tokenized(username, TOKEN)
             try:
+                data: list[dict] = fetch_data_tokenized(username, TOKEN)
                 basic_details, majority_lang, stars_per_repo = get_data(data)
                 fig = plot_data(basic_details, majority_lang, stars_per_repo)
 
@@ -70,8 +70,8 @@ if mode == "WITHOUT TOKENIZATION":
         if not valid:
             st.warning("First Carefully Enter the Required Details")
         else:
-            data: list[dict] = fetch_data_untokenized(username)
             try:
+                data: list[dict] = fetch_data_untokenized(username)
                 basic_details, majority_lang, stars_per_repo = get_data(data)
                 fig = plot_data(basic_details, majority_lang, stars_per_repo)
 
