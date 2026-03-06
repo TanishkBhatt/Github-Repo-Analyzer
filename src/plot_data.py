@@ -17,7 +17,7 @@ def plot_data(df1: dict, df2: dict, df3: dict) -> Figure:
     fig, ax = plt.subplots(2, 2, figsize=(14, 8))
 
     ax[0, 0].barh(X1, Y1, color=["#0d5080", "#ff7f0e", "#36be36", "#d62728"], alpha=0.75)
-    ax[0, 0].set_title("POPULATITY STATUS", fontsize=14, family="serif")
+    ax[0, 0].set_title("POPULARITY STATUS", fontsize=14, family="serif")
     ax[0, 0].grid(axis="y", linestyle="--", color="grey")
 
     ax[0, 1].barh(X2, Y2, color=["#1f77b4", "#1f77b4", "#2ca02c", "#2ca02c"], alpha=0.75)
