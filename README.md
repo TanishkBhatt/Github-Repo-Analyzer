@@ -113,7 +113,7 @@ Designed and created by `Tanishk Bhatt` a Student and a Programmer of India, as 
 - Requests Library Documentation :
 https://docs.python-requests.org/
 
-- Protfolio : https://tanishkbhatt.github.io/Portfolio/
+- Protfolio : https://tanishkbhatt.github.io/TanishkBhatt
 - Github : https://github.com/TanishkBhatt/
 
 ---
