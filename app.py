@@ -52,10 +52,11 @@ if mode == "WITH TOKENIZATION":
                 st.divider()
                 st.pyplot(fig)
                 st.divider()
-                st.image(f"https://github-readme-stats.vercel.app/api?username={username}&theme=dark")
-                st.image(f"https://nirzak-streak-stats.vercel.app/?user={username}&theme=dark")
+                st.image(f"https://github-readme-stats.vercel.app/api?username={username}&theme=light")
+                st.image(f"https://nirzak-streak-stats.vercel.app/?user={username}&theme=light")
                 st.image(f"https://github-readme-stats.vercel.app/api/top-langs/?username={username}&layout=compact")
-
+                st.divider()
+                        
             except Exception as error:
                     st.error(error)
         
@@ -97,8 +98,9 @@ if mode == "WITHOUT TOKENIZATION":
                 st.header("VISUAL ANALYTICS")
                 st.divider()
                 st.pyplot(fig)
-                st.image(f"https://github-readme-stats.vercel.app/api?username={username}&theme=dark")
-                st.image(f"https://nirzak-streak-stats.vercel.app/?user={username}&theme=dark")
+                st.divider()
+                st.image(f"https://github-readme-stats.vercel.app/api?username={username}&theme=light")
+                st.image(f"https://nirzak-streak-stats.vercel.app/?user={username}&theme=light")
                 st.image(f"https://github-readme-stats.vercel.app/api/top-langs/?username={username}&layout=compact")
                 st.divider()
 
