@@ -12,6 +12,8 @@ st.markdown("")
 mode: str = st.selectbox("SELECT MODE OF FETCHING DATA",
             ["WITH TOKENIZATION", "WITHOUT TOKENIZATION"])
 st.markdown("")
+get_report = False
+is_data = False
 
 if mode == "WITH TOKENIZATION":
     with st.form(key='github_repo_analyzer_tokenized'):
@@ -30,35 +32,11 @@ if mode == "WITH TOKENIZATION":
             try:
                 data: list[dict] = fetch_data_tokenized(username, TOKEN)
                 basic_details, majority_lang, stars_per_repo = get_data(data)
-                fig = plot_data(basic_details, majority_lang, stars_per_repo)
-
-                st.markdown("")
-                st.header("ANALYZED REPORTS")
-                st.divider()
-
-                col1, col2, col3 = st.columns(3)
-                with col1:
-                    st.markdown("##### BASIC DETAILS")
-                    st.dataframe(basic_details)
-                with col2:
-                    st.markdown("##### REPO POPULARITY")
-                    st.dataframe(stars_per_repo)
-                with col3:
-                    st.markdown("##### MAJORITY LANGUAGE")
-                    st.dataframe(majority_lang)
-                st.divider()
-
-                st.header("VISUAL ANALYTICS")
-                st.divider()
-                st.pyplot(fig)
-                st.divider()
-                st.image(f"https://github-readme-stats.vercel.app/api?username={username}&theme=light")
-                st.image(f"https://nirzak-streak-stats.vercel.app/?user={username}&theme=light")
-                st.image(f"https://github-readme-stats.vercel.app/api/top-langs/?username={username}&layout=compact")
-                st.divider()
-                        
+                fig = plot_data(basic_details, majority_lang, stars_per_repo)  
             except Exception as error:
-                    st.error(error)
+                st.error(error)
+            else:
+                is_data = True
         
 if mode == "WITHOUT TOKENIZATION":
     with st.form(key='github_repo_analyzer_untokenized'):
@@ -77,34 +55,36 @@ if mode == "WITHOUT TOKENIZATION":
             try:
                 data: list[dict] = fetch_data_untokenized(username)
                 basic_details, majority_lang, stars_per_repo = get_data(data)
-                fig = plot_data(basic_details, majority_lang, stars_per_repo)
-
-                st.markdown("")
-                st.header("ANALYZED REPORTS")
-                st.divider()
-
-                col1, col2, col3 = st.columns(3)
-                with col1:
-                    st.markdown("##### BASIC DETAILS")
-                    st.dataframe(basic_details)
-                with col2:
-                    st.markdown("##### REPO POPULARITY")
-                    st.dataframe(stars_per_repo)
-                with col3:
-                    st.markdown("##### MAJORITY LANGUAGE")
-                    st.dataframe(majority_lang)
-                st.divider()
-
-                st.header("VISUAL ANALYTICS")
-                st.divider()
-                st.pyplot(fig)
-                st.divider()
-                st.image(f"https://github-readme-stats.vercel.app/api?username={username}&theme=light")
-                st.image(f"https://nirzak-streak-stats.vercel.app/?user={username}&theme=light")
-                st.image(f"https://github-readme-stats.vercel.app/api/top-langs/?username={username}&layout=compact")
-                st.divider()
-
+                fig = plot_data(basic_details, majority_lang, stars_per_repo)        
             except Exception as error:
-                    st.error(error)
+                st.error(error)
+            else:
+                is_data = True
 
+if is_data:
+    st.markdown("")
+    st.header("ANALYZED REPORTS")
+    st.divider()
+
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.markdown("##### BASIC DETAILS")
+        st.dataframe(basic_details)
+    with col2:
+        st.markdown("##### REPO POPULARITY")
+        st.dataframe(stars_per_repo)
+    with col3:
+        st.markdown("##### MAJORITY LANGUAGE")
+        st.dataframe(majority_lang)
+    st.divider()
+
+    st.header("VISUAL ANALYTICS")
+    st.divider()
+    st.pyplot(fig)
+    st.divider()
+    st.image(f"https://github-readme-stats.vercel.app/api?username={username}&theme=light")
+    st.image(f"https://nirzak-streak-stats.vercel.app/?user={username}&theme=light")
+    st.image(f"https://github-readme-stats.vercel.app/api/top-langs/?username={username}&layout=compact")
+
+st.divider()
 st.caption("MADE BY TANISHK - A STUDENT AND A PROGRAMMER")
