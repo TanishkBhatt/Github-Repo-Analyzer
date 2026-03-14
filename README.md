@@ -1,17 +1,21 @@
 # GitHub Repo Analyzer - Python
 
 ## Dashboard View
-- User Interface
+- App's User Interface
 
 ![](ui/form.png)
 
-- Analyzed Report of Code With Harry's Github Account
+- Analyzed Report of Code With Harry's Github Account.
 
 ![](ui/report.png)
 
-- Github Repo Analysis of Code With Harry's Github Account
+- Complete Account Analysis using Matplotlib.
 
 ![](ui/dashboard.png)
+
+- Other Key Performance Analysis through local APIs.
+
+![](ui/kpi_report.jpg)
 
 ## Introduction
 `GitHub Repository Analyzer` is a Python-based analytics tool that fetches real-time repository data from the GitHub REST API and converts it into meaningful insights.  
