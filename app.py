@@ -82,7 +82,6 @@ if is_data:
     st.divider()
     st.pyplot(fig)
     st.divider()
-    st.image(f"https://github-readme-stats.vercel.app/api?username={username}&theme=light&show_icons=true")
     st.image(f"https://nirzak-streak-stats.vercel.app/?user={username}&theme=light")
     st.image(f"https://github-readme-stats.vercel.app/api/top-langs/?username={username}&layout=compact")
 
