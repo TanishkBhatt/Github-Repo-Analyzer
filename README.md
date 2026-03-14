@@ -5,7 +5,7 @@
 
 ![](ui/form.png)
 
-- Analyzed Report of Code With Harry's Github Account.
+- Analyzed Report through Github API.
 
 ![](ui/report.png)
 
@@ -13,7 +13,7 @@
 
 ![](ui/dashboard.png)
 
-- Other Key Performance Analysis through local APIs.
+- Other Key Performance Analysis through Vercel APIs.
 
 ![](ui/kpi_report.jpg)
 
@@ -79,7 +79,7 @@ Provides professional visualizations using Matplotlib:
 | UI Integration | `streamlit` |
 | Date & Time Processing | `datetime` |
 | Visualization | `matplotlib` |
-| Data Source | `GitHub REST API` |
+| Data Source | `GitHub and Vercel APIs` |
 
 
 ## How to Run the Project?
@@ -113,9 +113,6 @@ streamlit run app.py
 
 ## Author and Links
 Designed and created by `Tanishk Bhatt` a Student and a Programmer of India, as a real world working project using API Handling and Visualisation.
-
-- Requests Library Documentation :
-https://docs.python-requests.org/
 
 - Protfolio : https://tanishkbhatt.github.io/TanishkBhatt
 - Github : https://github.com/TanishkBhatt/
