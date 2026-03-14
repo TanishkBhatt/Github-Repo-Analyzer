@@ -1,8 +1,8 @@
 import streamlit as st
 from src import *
 
-st.title("GITHUB REPO ANALYZER")
 st.set_page_config(page_title='Github Repo Analyzer')
+st.title("GITHUB REPO ANALYZER")
 
 st.markdown("""
 **GitHub Repo Analyzer** is a Python-based Analytics Tool that Fetches Real-Time Repository Data from the GitHub REST API and converts it into meaningful insights. Focusing on **API Integration**, **Data Processing**, and **Visual Analytics** to evaluate one's GitHub Repository Activity, Popularity, and Technology usage.
@@ -52,6 +52,9 @@ if mode == "WITH TOKENIZATION":
                 st.divider()
                 st.pyplot(fig)
                 st.divider()
+                st.image(f"https://github-readme-stats.vercel.app/api?username={username}&theme=dark")
+                st.image(f"https://nirzak-streak-stats.vercel.app/?user={username}&theme=dark")
+                st.image(f"https://github-readme-stats.vercel.app/api/top-langs/?username={username}&layout=compact")
 
             except Exception as error:
                     st.error(error)
@@ -94,6 +97,9 @@ if mode == "WITHOUT TOKENIZATION":
                 st.header("VISUAL ANALYTICS")
                 st.divider()
                 st.pyplot(fig)
+                st.image(f"https://github-readme-stats.vercel.app/api?username={username}&theme=dark")
+                st.image(f"https://nirzak-streak-stats.vercel.app/?user={username}&theme=dark")
+                st.image(f"https://github-readme-stats.vercel.app/api/top-langs/?username={username}&layout=compact")
                 st.divider()
 
             except Exception as error:
