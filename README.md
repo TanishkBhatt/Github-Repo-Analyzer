@@ -1,4 +1,5 @@
 # GitHub Repo Analyzer - Python
+![developer](https://img.shields.io/badge/Developed%20By%20%3A-Tanishk%20Bhatt-blue)
 
 ## Dashboard View
 - App's User Interface
