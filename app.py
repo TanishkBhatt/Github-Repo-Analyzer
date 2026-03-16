@@ -12,6 +12,7 @@ st.markdown("")
 mode: str = st.selectbox("SELECT MODE OF FETCHING DATA",
             ["WITH TOKENIZATION", "WITHOUT TOKENIZATION"])
 st.markdown("")
+
 get_report = False
 is_data = False
 
@@ -19,7 +20,7 @@ if mode == "WITH TOKENIZATION":
     with st.form(key='github_repo_analyzer_tokenized'):
         TOKEN: str = st.text_input("PUT YOUR GITHUB DEV TOKEN HERE")
         username: str = st.text_input("ENTER THE USERNAME YOU WANT TO FETCH DATA OF")
-        valid: bool = username.strip() and TOKEN.strip()
+        valid: bool = bool(username.strip()) and bool(TOKEN.strip())
 
         col1, col2, col3 = st.columns(3)
         with col2:
@@ -30,7 +31,7 @@ if mode == "WITH TOKENIZATION":
             st.warning("First Carefully Enter the Required Details")
         else:
             try:
-                data: list[dict] = fetch_data_tokenized(username, TOKEN)
+                data = fetch_data_tokenized(username, TOKEN)
                 basic_details, majority_lang, stars_per_repo = get_data(data)
                 fig = plot_data(basic_details, majority_lang, stars_per_repo)  
             except Exception as error:
@@ -42,7 +43,7 @@ if mode == "WITHOUT TOKENIZATION":
     with st.form(key='github_repo_analyzer_untokenized'):
         username: str = st.text_input("ENTER THE USERNAME YOU WANT TO FETCH DATA OF")
         st.warning("NOTE : This Will Generate Report Of Just Recent 30 Repos")
-        valid: bool = username.strip() 
+        valid: bool = bool(username.strip()) 
 
         col1, col2, col3 = st.columns(3)
         with col2:
@@ -53,7 +54,7 @@ if mode == "WITHOUT TOKENIZATION":
             st.warning("First Carefully Enter the Required Details")
         else:
             try:
-                data: list[dict] = fetch_data_untokenized(username)
+                data = fetch_data_untokenized(username)
                 basic_details, majority_lang, stars_per_repo = get_data(data)
                 fig = plot_data(basic_details, majority_lang, stars_per_repo)        
             except Exception as error:
