@@ -88,9 +88,9 @@ Provides professional visualizations using Matplotlib:
 ### 1. Visit the Web-Page
 - Directly Visit the Webpage hosted on Streamlit Cloud Hosting Site.
 
-- Link : https://github-repo-analyzer-tanishkbhatt.streamlit.app
+- Link : https://githb-repo-analyzer-tanishkbhatt.streamlit.app
 
-- Generate a Github Developer's TOKEN through your Github Account and put it there.
+- Generate a Github Developer's TOKEN through your Github Account and put it there or run without that.
 
 - Enter the Username and Analyze.
 
