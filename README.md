@@ -4,19 +4,19 @@
 ## Dashboard View
 - App's User Interface
 
-![](ui/form.png)
+![](img/form.png)
 
 - Analyzed Report through Github API.
 
-![](ui/report.png)
+![](img/report.png)
 
 - Complete Account Analysis using Matplotlib.
 
-![](ui/dashboard.png)
+![](img/dashboard.png)
 
 - Other Key Performance Analysis through Vercel APIs.
 
-![](ui/kpi_report.jpg)
+![](img/kpi_report.jpg)
 
 ## Introduction
 `GitHub Repository Analyzer` is a Python-based analytics tool that fetches real-time repository data from the GitHub REST API and converts it into meaningful insights.  
