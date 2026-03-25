@@ -14,10 +14,6 @@
 
 ![](img/dashboard.png)
 
-- Other Key Performance Analysis through Vercel APIs.
-
-![](img/kpi_report.jpg)
-
 ## Introduction
 `GitHub Repository Analyzer` is a Python-based analytics tool that fetches real-time repository data from the GitHub REST API and converts it into meaningful insights.  
 The project focuses on `API integration`, `Data Processing`, and `Visual Analytics` to evaluate a GitHub user’s repository activity, popularity, and technology usage.
@@ -75,12 +71,12 @@ Provides professional visualizations using Matplotlib:
 ## Technical Stack Used
 | Component | Technology |
 |--------|------------|
-| Programming Language | `python` |
-| API Handling | `requests` |
-| UI Integration | `streamlit` |
-| Date & Time Processing | `datetime` |
-| Visualization | `matplotlib` |
-| Data Source | `GitHub and Vercel APIs` |
+| Programming Language |  python3  |
+| API Handling |  requests  |
+| UI Integration |  streamlit  |
+| Date & Time Processing |  datetime  |
+| Visualization |  matplotlib  |
+| Data Source |  GitHub APIs  |
 
 
 ## How to Run the Project?
