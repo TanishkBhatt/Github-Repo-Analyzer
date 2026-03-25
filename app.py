@@ -82,9 +82,6 @@ if is_data:
     st.header("VISUAL ANALYTICS")
     st.divider()
     st.pyplot(fig)
-    st.divider()
-    st.image(f"https://nirzak-streak-stats.vercel.app/?user={username}&theme=light")
-    st.image(f"https://github-readme-stats.vercel.app/api/top-langs/?username={username}&layout=compact")
 
 st.divider()
 st.caption("MADE BY TANISHK - A STUDENT AND A PROGRAMMER")
