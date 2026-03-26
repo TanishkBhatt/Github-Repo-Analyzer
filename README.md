@@ -1,7 +1,9 @@
 # GitHub Repo Analyzer - Python
-![developer](https://img.shields.io/badge/Developed%20By%20%3A-Tanishk%20Bhatt-blue)
+![developer](https://img.shields.io/badge/Developed%20By%20%3A-Tanishk%20Bhatt-black)
 
-## Dashboard View
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://devpulse-survey-tanishkbhatt.streamlit.app)
+
+## Dashboard View 
 - App's User Interface
 
 ![](img/form.png)
@@ -14,6 +16,13 @@
 
 ![](img/dashboard.png)
 
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technical Stack Used](#technical-stack-used)
+- [How to Run the Project](#how-to-run-the-project)
+- [Author and Links](#author-and-links)
+
 ## Introduction
 `GitHub Repository Analyzer` is a Python-based analytics tool that fetches real-time repository data from the GitHub REST API and converts it into meaningful insights.  
 The project focuses on `API integration`, `Data Processing`, and `Visual Analytics` to evaluate a GitHub user’s repository activity, popularity, and technology usage.
@@ -24,14 +33,6 @@ This project demonstrates real-world usage of:
 - Data Aggregation
 - Graphical Visualization
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technical Stack Used](#technical-stack-used)
-- [How to Run the Project](#how-to-run-the-project)
-- [Author and Links](#author-and-links)
-
----
 
 ## Features
 ### GitHub API Data Fetching
