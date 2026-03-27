@@ -1,7 +1,7 @@
 # GitHub Repo Analyzer - Python
-![developer](https://img.shields.io/badge/Developed%20By%20%3A-Tanishk%20Bhatt-black)
+![developer](https://img.shields.io/badge/Developed%20By%20%3A-Tanishk%20Bhatt-white)
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://devpulse-survey-tanishkbhatt.streamlit.app)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_white.svg)](https://devpulse-survey-tanishkbhatt.streamlit.app)
 
 ## Dashboard View 
 - App's User Interface
@@ -112,7 +112,8 @@ streamlit run app.py
 ## Author and Links
 Designed and created by `Tanishk Bhatt` a Student and a Programmer of India, as a real world working project using API Handling and Visualisation.
 
-- Protfolio : https://tanishkbhatt.github.io/TanishkBhatt
-- Github : https://github.com/TanishkBhatt/
+[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@Tanishk_Bhatt)
+
+[![Portfolio](https://img.shields.io/badge/My%20Portfolio-Visit-blue?style=for-the-badge)](https://tanishk-bhatt.vercel.app)
 
 ---
