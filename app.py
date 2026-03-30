@@ -12,7 +12,7 @@ st.markdown("###### [ Maximum Repos Fetching Limit : 500 ]")
 st.markdown("")
 
 with st.form(key='github_repo_analyzer'):
-    username: str = st.text_input("ENTER THE USERNAME YOU WANT TO FETCH DATA OF")
+    username: str = st.text_input("ENTER THE USERNAME")
     get_report: bool = st.form_submit_button("GET ANALYZED REPORT")
         
 if get_report:
