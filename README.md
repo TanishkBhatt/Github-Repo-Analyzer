@@ -1,7 +1,7 @@
 # GitHub Repo Analyzer - Python
 ![Developer](https://img.shields.io/badge/Developed%20By%20%3A-Tanishk%20Bhatt-white)
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_white.svg)](https://devpulse-survey-tanishkbhatt.streamlit.app)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_white.svg)](https://githb-repo-analyzer-tanishkbhatt.streamlit.app)
 
 ## Dashboard View 
 - App's User Interface
