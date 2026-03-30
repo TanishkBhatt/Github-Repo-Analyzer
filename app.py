@@ -25,13 +25,18 @@ if get_report:
 
             acc_info = extract_account_info(acc_data)
             repo_details, majority_lang, popular_repo = extract_repos_info(repo_data)
-
+            
+            activity_status = repo_details.copy()
+            for key in ("total_repos", "active_repos", "public_repos"):
+                del activity_status[key]
+            
             majority_lang_fig = majority_language_plot(majority_lang) 
             popular_repo_fig = popular_repo_plot(popular_repo)
-            activity_status_fig = activity_status_plot(repo_details)
+            activity_status_fig = activity_status_plot(activity_status)
 
         except Exception as e:
             st.error(e)
+            
         else:
             st.markdown("")
             st.header("ANALYZED REPORTS")
