@@ -51,7 +51,7 @@ def extract_repos_info(data: list[dict]) -> tuple[dict, dict, dict]:
         majority_lang[language] = majority_lang.get(language, 0) + 1
         popular_repos[repo["name"]] = repo["stargazers_count"]
 
-    majority_lang = dict(sorted(majority_lang.items(), key=lambda x:x[1], reverse=True)[:5])
+    majority_lang = dict(sorted(majority_lang.items(), key=lambda x:x[1], reverse=True))
     popular_repos = dict(sorted(popular_repos.items(), key=lambda x:x[1], reverse=True)[:5])
 
     return (details, majority_lang, popular_repos)
