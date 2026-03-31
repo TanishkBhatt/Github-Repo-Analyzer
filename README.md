@@ -1,26 +1,28 @@
 # GitHub Repo Analyzer - Python
-![developer](https://img.shields.io/badge/Developed%20By%20%3A-Tanishk%20Bhatt-white)
+![Developer](https://img.shields.io/badge/Developed%20By%20%3A-Tanishk%20Bhatt-white)
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_white.svg)](https://devpulse-survey-tanishkbhatt.streamlit.app)
 
 ## Dashboard View 
 - App's User Interface
 
-![](img/form.png)
+![User-Interface](img/user-interface.png)
 
 - Analyzed Report through Github API.
 
-![](img/report.png)
+![Analyzed-Report](img/analyzed-report.png)
 
 - Complete Account Analysis using Matplotlib.
 
-![](img/dashboard.png)
+![Graphical-Repr-I](img/visual-analytics-I.png)
+![Graphical-Repr-II](img/visual-analytics-II.png)
+![Graphical-Repr-III](img/visual-analytics-III.png)
 
 ## Table of Contents
+- [Dashboard View](#dashboard-view)
 - [Introduction](#introduction)
 - [Features](#features)
 - [Technical Stack Used](#technical-stack-used)
-- [How to Run the Project](#how-to-run-the-project)
 - [Author and Links](#author-and-links)
 
 ## Introduction
@@ -37,7 +39,9 @@ This project demonstrates real-world usage of:
 ## Features
 ### GitHub API Data Fetching
 - Fetches repository data using GitHub REST API
-- API URL : `https://api.github.com/users/<username>/repos`
+- User Account API : `https://api.github.com/users/<username>/`
+- User Repositories API : `https://api.github.com/users/<username>/repos/`
+
 - Handles:
   - Invalid usernames
   - API rate limits
@@ -76,44 +80,13 @@ Provides professional visualizations using Matplotlib:
 | API Handling |  requests  |
 | UI Integration |  streamlit  |
 | Date & Time Processing |  datetime  |
-| Visualization |  matplotlib  |
+| Visualization |  plotly  |
 | Data Source |  GitHub APIs  |
-
-
-## How to Run the Project?
-
-### 1. Visit the Web-Page
-- Directly Visit the Webpage hosted on Streamlit Cloud Hosting Site.
-
-- Link : https://githb-repo-analyzer-tanishkbhatt.streamlit.app
-
-- Generate a Github Developer's TOKEN through your Github Account and put it there or run without that.
-
-- Enter the Username and Analyze.
-
-### 2. Clone the Repository
-- Clone the Repository and run locally on your system
-```bash
-git clone https://github.com/TanishkBhatt/Github-Repo-Analyzer.git
-```
-### Install Required Libraries
-```bash
-pip install -r requirements.txt
-```
-### Run the Script
-```bash
-streamlit run app.py
-```
-#### The program will generate:
-
-- A detailed GitHub profile analysis report
-- Multiple graphical visualizations
 
 ## Author and Links
 Designed and created by `Tanishk Bhatt` a Student and a Programmer of India, as a real world working project using API Handling and Visualisation.
 
-[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@Tanishk_Bhatt)
-
 [![Portfolio](https://img.shields.io/badge/My%20Portfolio-Visit-blue?style=for-the-badge)](https://tanishk-bhatt.vercel.app)
+[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@Tanishk_Bhatt)
 
 ---

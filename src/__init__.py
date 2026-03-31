@@ -1,3 +1,3 @@
-from .fetch_data import fetch_data_tokenized, fetch_data_untokenized
-from .get_data import get_data
-from .plot_data import plot_data
+from .fetch_data import fetch_account_data, fetch_repos_data
+from .exctract_data import extract_account_info, extract_repos_info
+from .plot_data import activity_status_plot, majority_language_plot, popular_repo_plot

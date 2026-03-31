@@ -3,85 +3,57 @@ from src import *
 
 st.set_page_config(page_title='Github Repo Analyzer')
 st.title("GITHUB REPO ANALYZER")
+st.divider()
 
 st.markdown("""
-**GitHub Repo Analyzer** is a Python-based Analytics Tool that Fetches Real-Time Repository Data from the GitHub REST API and converts it into meaningful insights. Focusing on **API Integration**, **Data Processing**, and **Visual Analytics** to evaluate one's GitHub Repository Activity, Popularity, and Technology usage.
+**GitHub Repo Analyzer** is a Python-based Analytics Tool that Fetches Real-Time Account and Repository Data from the GitHub REST API and converts it into meaningful insights. Focusing on **API Integration**, **Data Processing**, and **Visual Analytics** to evaluate one's GitHub Activity, Popularity, and Technology usage.
 """)
+st.markdown("###### [ Maximum Repos Fetching Limit : 500 ]")
 st.markdown("")
 
-mode: str = st.selectbox("SELECT MODE OF FETCHING DATA",
-            ["WITH TOKENIZATION", "WITHOUT TOKENIZATION"])
-st.markdown("")
-
-get_report = False
-is_data = False
-
-if mode == "WITH TOKENIZATION":
-    with st.form(key='github_repo_analyzer_tokenized'):
-        TOKEN: str = st.text_input("PUT YOUR GITHUB DEV TOKEN HERE")
-        username: str = st.text_input("ENTER THE USERNAME YOU WANT TO FETCH DATA OF")
-        valid: bool = bool(username.strip()) and bool(TOKEN.strip())
-
-        col1, col2, col3 = st.columns(3)
-        with col2:
-            get_report: bool = st.form_submit_button("GET ANALYZED REPORT")
+with st.form(key='github_repo_analyzer'):
+    username: str = st.text_input("ENTER THE USERNAME YOU WANT TO FETCH DATA OF")
+    get_report: bool = st.form_submit_button("GET ANALYZED REPORT")
         
-    if get_report:
-        if not valid:
-            st.warning("First Carefully Enter the Required Details")
+if get_report:
+    if not username.strip():
+        st.warning("PLEASE ENTER THE USERNAME!")
+    else:
+        try:
+            acc_data = fetch_account_data(username)
+            repo_data = fetch_repos_data(username)
+
+            acc_info = extract_account_info(acc_data)
+            repo_details, majority_lang, popular_repo = extract_repos_info(repo_data)
+
+            majority_lang_fig = majority_language_plot(majority_lang) 
+            popular_repo_fig = popular_repo_plot(popular_repo)
+            activity_status_fig = activity_status_plot(repo_details)
+
+        except Exception as e:
+            st.error(e)
         else:
-            try:
-                data = fetch_data_tokenized(username, TOKEN)
-                basic_details, majority_lang, stars_per_repo = get_data(data)
-                fig = plot_data(basic_details, majority_lang, stars_per_repo)  
-            except Exception as error:
-                st.error(error)
-            else:
-                is_data = True
-        
-if mode == "WITHOUT TOKENIZATION":
-    with st.form(key='github_repo_analyzer_untokenized'):
-        username: str = st.text_input("ENTER THE USERNAME YOU WANT TO FETCH DATA OF")
-        st.warning("NOTE : This Will Generate Report Of Just Recent 30 Repos")
-        valid: bool = bool(username.strip()) 
+            st.markdown("")
+            st.header("ANALYZED REPORTS")
+            st.divider()
 
-        col1, col2, col3 = st.columns(3)
-        with col2:
-            get_report: bool = st.form_submit_button("GET ANALYZED REPORT")
-        
-    if get_report:
-        if not valid:
-            st.warning("First Carefully Enter the Required Details")
-        else:
-            try:
-                data = fetch_data_untokenized(username)
-                basic_details, majority_lang, stars_per_repo = get_data(data)
-                fig = plot_data(basic_details, majority_lang, stars_per_repo)        
-            except Exception as error:
-                st.error(error)
-            else:
-                is_data = True
+            col1, col2 = st.columns(2)
+            with col1:
+                st.markdown("##### ACCOUNT DETAILS")
+                st.dataframe(acc_info)
+                st.markdown("##### MAJORITY LANGUAGE")
+                st.dataframe(majority_lang)
+            with col2:
+                st.markdown("##### REPOSITORY ACTIVITY")
+                st.dataframe(repo_details)
+                st.markdown("##### POPULAR REPOSITORY")
+                st.dataframe(popular_repo)
 
-if is_data:
-    st.markdown("")
-    st.header("ANALYZED REPORTS")
-    st.divider()
-
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.markdown("##### BASIC DETAILS")
-        st.dataframe(basic_details)
-    with col2:
-        st.markdown("##### REPO POPULARITY")
-        st.dataframe(stars_per_repo)
-    with col3:
-        st.markdown("##### MAJORITY LANGUAGE")
-        st.dataframe(majority_lang)
-    st.divider()
-
-    st.header("VISUAL ANALYTICS")
-    st.divider()
-    st.pyplot(fig)
+            st.divider()
+            st.header("VISUAL ANALYTICS")
+            st.plotly_chart(activity_status_fig)
+            st.plotly_chart(majority_lang_fig)
+            st.plotly_chart(popular_repo_fig)
 
 st.divider()
 st.caption("MADE BY TANISHK - A STUDENT AND A PROGRAMMER")

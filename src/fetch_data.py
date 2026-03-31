@@ -1,16 +1,37 @@
 import requests
+import streamlit as st
 
-def fetch_data_tokenized(username: str, TOKEN: str) -> list[dict]:
-    repos = []
+def fetch_account_data(username: str) -> dict:
+    url = f"https://api.github.com/users/{username}"            # Base URL
+    try:
+        response = requests.get(url, timeout=10)
+        if response.status_code == 200:
+            return response.json()
+        elif response.status_code == 404:
+            raise Exception("USERNAME NOT FOUND")
+        else:
+            raise Exception("FAILED TO RETRIVE DATA")
+
+    except requests.exceptions.Timeout:
+        raise Exception("API REQUEST TIMED OUT")
+    except Exception as error:
+        raise Exception(error)
+
+def fetch_repos_data(username: str) -> list[dict]:
+    TOKEN = st.secrets["TOKEN"]
+    repos_data = []
     page = 1
     per_page = 100
 
     while True:
-        url = f"https://api.github.com/users/{username}/repos"
-        params = {"per_page": per_page,
+        if len(repos_data) == 500:
+                break   # Maximum Repos Fetching Limit
+        
+        url = f"https://api.github.com/users/{username}/repos"      # Base URL
+        params = {"per_page": per_page,                             # Pagination
                   "page": page,
                   "sort": "updated"}
-        headers = {"Authorization": f"Bearer {TOKEN}",
+        headers = {"Authorization": f"Bearer {TOKEN}",              # Authorization
                   "Accept": "application/vnd.github+json"}
 
         try:
@@ -21,44 +42,19 @@ def fetch_data_tokenized(username: str, TOKEN: str) -> list[dict]:
 
             if response.status_code == 200:
                 repo = response.json()
-                if not repo: break
-                repos.extend(repo)
+                if not repo: 
+                    break
+                repos_data.extend(repo)
                 page += 1
             
             elif response.status_code == 404:
-                raise Exception("Error 404 : Username Not Found")
-            elif response.status_code == 403:
-                raise Exception("Error 403 : Rate Limit Exceeds")
+                raise Exception("USERNAME NOT FOUND")
             else:
-                raise Exception(f"Something Went Wrong : {response.status_code}")
+                raise Exception("FAILED TO RETRIVE DATA")
 
         except requests.exceptions.Timeout:
-            raise Exception("API Request Timed Out")
-        except Exception as f:
-            raise Exception(f"Request Failed : {f}")
+            raise Exception("API REQUEST TIMED OUT")
+        except Exception as error:
+            raise Exception(error)
         
-    return repos
-
-def fetch_data_untokenized(username: str) -> list[dict]:
-    url = f"https://api.github.com/users/{username}/repos"
-
-    try:
-        response = requests.get(url,
-                            timeout=10)
-
-        if response.status_code == 200:
-            repos = response.json()
-            
-        elif response.status_code == 404:
-            raise Exception("Error 404 : Username Not Found")
-        elif response.status_code == 403:
-            raise Exception("Error 403 : Rate Limit Exceeds")
-        else:
-            raise Exception(f"Something Went Wrong : {response.status_code}")
-
-    except requests.exceptions.Timeout:
-        raise Exception("API Request Timed Out")
-    except Exception as f:
-        raise Exception(f"Request Failed : {f}")
-        
-    return repos
+    return repos_data
