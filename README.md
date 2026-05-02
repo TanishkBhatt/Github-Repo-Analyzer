@@ -86,7 +86,8 @@ Provides professional visualizations using Matplotlib:
 ## Author and Links
 Designed and created by `Tanishk Bhatt` a Student and a Programmer of India, as a real world working project using API Handling and Visualisation.
 
-[![Portfolio](https://img.shields.io/badge/My%20Portfolio-Visit-blue?style=for-the-badge)](https://tanishkbhatt.vercel.app)
-[![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@Tanishk_Bhatt)
+[![Portfolio](https://img.shields.io/badge/My%20Portfolio-Visit-blue?style=for-the-badge&logo=web)](https://tanishkbhatt.vercel.app)
+
+[![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail&logoColor=white)](tanishkbhatt25@gmail.com)
 
 ---
