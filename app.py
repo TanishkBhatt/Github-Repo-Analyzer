@@ -11,7 +11,7 @@ st.markdown("""
 st.markdown("- API Integration")
 st.markdown("- Data Processing")
 st.markdown("- Visual Analytics")
-st.markdown("##### [ Maximum Repos Fetching Limit : 500 ]")
+st.markdown("###### [ Maximum Repos Fetching Limit : 500 ]")
 st.markdown("")
 
 with st.form(key='github_repo_analyzer'):
