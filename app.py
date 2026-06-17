@@ -1,14 +1,17 @@
 import streamlit as st
-from src import *
+from utils import *
 
 st.set_page_config(page_title='Github Repo Analyzer')
 st.title("GITHUB REPO ANALYZER")
 st.divider()
 
 st.markdown("""
-**GitHub Repo Analyzer** is a Python-based Analytics Tool that Fetches Real-Time Account and Repository Data from the GitHub REST API and converts it into meaningful insights. Focusing on **API Integration**, **Data Processing**, and **Visual Analytics** to evaluate one's GitHub Activity, Popularity, and Technology usage.
+**GITHUB REPO ANALYZER** is a Python-based Analytics Tool that Fetches Real-Time Account and Repository Data from the GitHub REST API and converts it into meaningful insights.
 """)
-st.markdown("###### [ Maximum Repos Fetching Limit : 500 ]")
+st.markdown("- API Integration")
+st.markdown("- Data Processing")
+st.markdown("- Visual Analytics")
+st.markdown("##### [ Maximum Repos Fetching Limit : 500 ]")
 st.markdown("")
 
 with st.form(key='github_repo_analyzer'):
