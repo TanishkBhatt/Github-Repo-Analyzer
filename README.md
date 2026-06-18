@@ -23,10 +23,13 @@ Github Repo is an Analysing Tool that Automates Repository and Account Analysis 
 
 ## Screenshots
 
+- User Interface
 ![User Interface](img/user-interface.png)
 
+- Analyzed Report
 ![Aanalyzed Report](img/analyzed-report.png)
 
+- Visualizations 
 ![Visualizations](img/visualizations.png)
 
 ## Contributing
